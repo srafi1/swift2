@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:gravity="center_horizontal"
+	tools:context=".GameOverActivity"
+    android:background="@android:color/black"
+	>
+	
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Game Over"
+		android:textSize="56sp"
+	    android:padding="20dp"
+	    android:id="@+id/gameOverTitle"
+		/>
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textSize="48sp"
+	    android:textColor="@android:color/white"
+	    android:id="@+id/gamemode"
+		/>
+	
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textSize="48sp"
+		android:text="Score: "
+		android:textColor="@android:color/white"
+		android:id="@+id/score"
+		/>
+	
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textSize="48sp"
+		android:text="Highscore: "
+		android:textColor="@android:color/white"
+		android:id="@+id/highscore"
+		/>
+	
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Play Again"
+		android:textSize="48dp"
+		android:textColor="@android:color/white"
+		android:background="@android:color/transparent"
+		android:onClick="playAgain"/>
+	
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Main Menu"
+		android:textSize="48dp"
+		android:textColor="@android:color/white"
+		android:background="@android:color/transparent"
+		android:onClick="back"/>
+	
+</LinearLayout>

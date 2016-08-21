@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context="io.waffle.srafi2.Gamemodes"
+	android:orientation="vertical"
+	android:gravity="center_horizontal">
+	
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+	    android:text="Gamemodes"
+	    android:textSize="48dp"
+	    android:textColor="@android:color/white"
+	    android:padding="10dp"
+	/>
+	
+	<ScrollView android:layout_width="match_parent" android:layout_height="wrap_content">
+		<TableLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+			<TableRow android:padding="5dp">
+				<Button
+					android:text="Sight"
+					android:textColor="#FFFFFF"
+					android:textSize="36sp"
+					android:layout_width="0dp"
+					android:layout_weight=".7"
+					android:layout_height="wrap_content"
+					android:background="@drawable/gamemode_btn"
+				    android:onClick="sight"
+				/>
+				<Button
+					android:background="@drawable/help_btn"
+				    android:text="\?"
+				    android:textSize="36dp"
+				    android:textColor="@android:color/white"
+				    android:layout_height="wrap_content"
+				    android:layout_width="0dp"
+				    android:layout_weight=".2"
+				    android:onClick="sightHelp"
+				/>
+			</TableRow>
+			<TableRow android:padding="5dp">
+				<Button
+					android:text="Snowball"
+					android:textColor="#FFFFFF"
+					android:textSize="36sp"
+					android:layout_width="0dp"
+					android:layout_weight=".7"
+					android:layout_height="wrap_content"
+					android:background="@drawable/gamemode_btn"
+					android:onClick="snowball"
+				/>
+				<Button
+					android:background="@drawable/help_btn"
+					android:text="\?"
+					android:textSize="36dp"
+					android:textColor="@android:color/white"
+					android:layout_height="wrap_content"
+					android:layout_width="0dp"
+					android:layout_weight=".2"
+					android:onClick="snowballHelp"
+				/>
+			</TableRow>
+			<TableRow android:padding="5dp">
+				<Button
+					android:text="Uphill"
+					android:textColor="#FFFFFF"
+					android:textSize="36sp"
+					android:layout_width="0dp"
+					android:layout_weight=".7"
+					android:layout_height="wrap_content"
+					android:background="@drawable/gamemode_btn"
+					android:onClick="uphill"
+				/>
+				<Button
+					android:background="@drawable/help_btn"
+					android:text="\?"
+					android:textSize="36dp"
+					android:textColor="@android:color/white"
+					android:layout_height="wrap_content"
+					android:layout_width="0dp"
+					android:layout_weight=".2"
+					android:onClick="uphillHelp"
+				/>
+			</TableRow>
+			<TableRow android:padding="5dp">
+				<Button
+					android:text="Feed"
+					android:textColor="#FFFFFF"
+					android:textSize="36sp"
+					android:layout_width="0dp"
+					android:layout_weight=".7"
+					android:layout_height="wrap_content"
+					android:background="@drawable/gamemode_btn"
+					android:onClick="feed"
+				/>
+				<Button
+					android:background="@drawable/help_btn"
+					android:text="\?"
+					android:textSize="36dp"
+					android:textColor="@android:color/white"
+					android:layout_height="wrap_content"
+					android:layout_width="0dp"
+					android:layout_weight=".2"
+					android:onClick="feedHelp"
+				/>
+			</TableRow>
+			<TableRow android:padding="5dp">
+				<Button
+					android:text="Scroll"
+					android:textColor="#FFFFFF"
+					android:textSize="36sp"
+					android:layout_width="0dp"
+					android:layout_weight=".7"
+					android:layout_height="wrap_content"
+					android:background="@drawable/gamemode_btn"
+					android:onClick="scroll"
+				/>
+				<Button
+					android:background="@drawable/help_btn"
+					android:text="\?"
+					android:textSize="36dp"
+					android:textColor="@android:color/white"
+					android:layout_height="wrap_content"
+					android:layout_width="0dp"
+					android:layout_weight=".2"
+					android:onClick="scrollHelp"
+				/>
+			</TableRow>
+			<TableRow android:padding="5dp">
+				<Button
+					android:text="Jump"
+					android:textColor="#FFFFFF"
+					android:textSize="36sp"
+					android:layout_width="0dp"
+					android:layout_weight=".7"
+					android:layout_height="wrap_content"
+					android:background="@drawable/gamemode_btn"
+					android:onClick="jump"
+				/>
+				<Button
+					android:background="@drawable/help_btn"
+					android:text="\?"
+					android:textSize="36dp"
+					android:textColor="@android:color/white"
+					android:layout_height="wrap_content"
+					android:layout_width="0dp"
+					android:layout_weight=".2"
+					android:onClick="jumpHelp"
+				/>
+			</TableRow>
+		</TableLayout>
+	</ScrollView>
+	
+</LinearLayout>

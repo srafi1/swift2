@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+<TableLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	tools:context="io.waffle.srafi2.Settings"
+    android:gravity="center_horizontal"
+	>
+	<TableRow android:gravity="center">
+		<TextView
+			android:text="Settings"
+		    android:textSize="48sp"
+		    android:textColor="@android:color/white"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:gravity="center"
+		/>
+	</TableRow>
+	<TableRow android:gravity="center" android:paddingTop="10dp">
+		<TextView
+		android:text="Controls"
+		android:textSize="36sp"
+		android:textColor="#dddddd"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		/>
+	</TableRow>
+	<TableRow android:paddingBottom="10dp">
+		<Button
+			android:text="Touch"
+		    android:textSize="36sp"
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"
+		    android:layout_weight=".4"
+		    style="@style/GdxTheme"
+		    android:textColor="@android:color/white"
+		    android:background="@android:color/black"
+		    android:onClick="setTouch"
+			android:id="@+id/touch"/>
+		<Button
+			android:text="Tilt"
+			android:textSize="36sp"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight=".4"
+			style="@style/GdxTheme"
+			android:textColor="@android:color/white"
+			android:background="@android:color/black"
+		    android:onClick="setTilt"
+			android:id="@+id/tilt"/>
+	</TableRow>
+	<TableRow android:gravity="center" android:paddingTop="10dp">
+		<TextView
+			android:text="Ball Color"
+			android:textSize="36sp"
+			android:textColor="#dddddd"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/color"
+			android:gravity="center"
+		/>
+	</TableRow>
+	<TableRow android:gravity="center">
+		<Button
+			android:layout_width="0dp"
+			android:layout_weight=".3"
+			android:layout_height="wrap_content"
+			android:background="#0000ff"
+			android:id="@+id/bluebtn"
+		    android:text="Blue"
+		    android:textSize="36dp"
+		    android:textColor="@android:color/black"
+		    android:onClick="setBlue"
+		/>
+		<Button
+			android:layout_width="0dp"
+			android:layout_weight=".3"
+			android:layout_height="wrap_content"
+			android:background="#ff0000"
+			android:id="@+id/redbtn"
+			android:text="Red"
+			android:textSize="36dp"
+			android:textColor="@android:color/black"
+			android:onClick="setRed"
+		/>
+		<Button
+			android:layout_width="0dp"
+			android:layout_weight=".3"
+			android:layout_height="wrap_content"
+			android:background="#cccc00"
+			android:id="@+id/yellowbtn"
+			android:text="Yellow"
+			android:textSize="36dp"
+			android:textColor="@android:color/black"
+			android:onClick="setYellow"
+		/>
+	</TableRow><TableRow android:paddingBottom="20dp" android:gravity="center">
+	<Button
+		android:layout_width="0dp"
+		android:layout_weight=".3"
+		android:layout_height="wrap_content"
+		android:background="#ffa500"
+		android:id="@+id/orangebtn"
+		android:text="Orange"
+		android:textSize="36dp"
+		android:textColor="@android:color/black"
+		android:onClick="setOrange"
+		/>
+	<Button
+		android:layout_width="0dp"
+		android:layout_weight=".3"
+		android:layout_height="wrap_content"
+		android:background="#00ff00"
+		android:id="@+id/greenbtn"
+		android:text="Green"
+		android:textSize="36dp"
+		android:textColor="@android:color/black"
+		android:onClick="setGreen"
+		/>
+	<Button
+		android:layout_width="0dp"
+		android:layout_weight=".3"
+		android:layout_height="wrap_content"
+		android:background="#800080"
+		android:id="@+id/purplebtn"
+		android:text="Purple"
+		android:textSize="36dp"
+		android:textColor="@android:color/black"
+		android:onClick="setPurple"
+		/>
+	</TableRow>
+	<TableRow android:gravity="center">
+		<Button
+			android:text="Back to Main Menu"
+			android:textSize="36dp"
+			android:onClick="mainMenu"/>
+	</TableRow>
+</TableLayout>
+</ScrollView>
