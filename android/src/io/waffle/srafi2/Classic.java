@@ -17,18 +17,18 @@ import java.util.ArrayList;
 
 public class Classic extends ApplicationAdapter implements InputProcessor {
 	private SpriteBatch batch;
-	private float ballX, ballY, ballRadius, base, touchX, touchY, speed, screenWidth, screenHeight;
+	public float ballX, ballY, ballRadius, base, touchX, touchY, speed, realSpeed, screenWidth, screenHeight;
 	private Color ballColor;
 	private ShapeRenderer ballRenderer;
-	private float totalTime = 0, nextSpawn;
+	public float totalTime = 0, nextSpawn;
 	private TextureAtlas red_atlas, pink_atlas, pink_atlas_flip, green_atlas, purple_atlas;
 	private Animation red_anim, pink_anim, pink_anim_flip, green_anim, purple_anim;
-	private int inputType, score;
-	private ArrayList<Obstacle> obstacles;
+	public int inputType, score;
+	public ArrayList<Obstacle> obstacles;
 	private BitmapFont font;
 	private boolean paused;
 	private Texture pause, play;
-	private GameOver end;
+	public GameOver end;
 
 	public Classic(GameOver go) {
 		super();
@@ -146,20 +146,25 @@ public class Classic extends ApplicationAdapter implements InputProcessor {
 		batch.end();
 	}
 
-	private void update() {
+	public void update() {
+		updateRealSpeed();
 		if (totalTime >= nextSpawn) spawn();
 		moveBall();
 
-		for (int i = 0; i < obstacles.size(); i++) obstacles.get(i).move(speed/Gdx.graphics.getFramesPerSecond(), ballX);
+		for (int i = 0; i < obstacles.size(); i++) obstacles.get(i).move(realSpeed, ballX, true);
 
 		if (obstacles.size() == 0) return;
 
-		Obstacle firstOb = obstacles.get(0);
-		if (dist(firstOb.x, firstOb.y, ballX, ballY) < ballRadius*2) end.die(score);
-		if (firstOb.y < 0 - base) {
+		if (dist(obstacles.get(0).x, obstacles.get(0).y, ballX, ballY) < ballRadius*2) end.die(score);
+		if (obstacles.get(0).y < 0 - base) {
 			obstacles.remove(0);
 			score++;
 		}
+	}
+
+	public void updateRealSpeed() {
+		realSpeed = speed/Gdx.graphics.getFramesPerSecond();
+		if (realSpeed > speed) realSpeed = speed/60;
 	}
 
 	@Override
@@ -174,23 +179,23 @@ public class Classic extends ApplicationAdapter implements InputProcessor {
 		paused = true;
 	}
 
-	private double dist(float x1, float y1, float x2, float y2) {
+	public double dist(float x1, float y1, float x2, float y2) {
 		return Math.sqrt((x2 - x1)*(x2 - x1) + (y2 - y1)*(y2 - y1));
 	}
 
-	private void spawn() {
+	public void spawn() {
 		obstacles.add(new Obstacle());
-		if (score < 500) nextSpawn = totalTime +  1 - score/1000f;
-		else nextSpawn += 0.5;
+		if (score < 500) nextSpawn = totalTime +  0.7f - score/1000f;
+		else nextSpawn = totalTime + 0.3f;
 	}
 
-	private void moveBall() {
+	public void moveBall() {
 		if (inputType == 0 && touchX > 0) {
-			if (ballX > touchX + 5) ballX -= speed/Gdx.graphics.getFramesPerSecond();
-			else if (ballX < touchX - 5) ballX += speed/Gdx.graphics.getFramesPerSecond();
+			if (ballX > touchX + 5) ballX -= realSpeed;
+			else if (ballX < touchX - 5) ballX += realSpeed;
 		} else if (inputType == 1) {
-			float maxspd = speed/Gdx.graphics.getFramesPerSecond();
-			float spd = speed/Gdx.graphics.getFramesPerSecond()*Gdx.input.getAccelerometerX()/3;
+			float maxspd = realSpeed;
+			float spd = realSpeed*Gdx.input.getAccelerometerX()/3;
 			if (spd > maxspd) spd = maxspd;
 			if (spd < maxspd*-1) spd = maxspd*-1;
 			ballX -= spd;

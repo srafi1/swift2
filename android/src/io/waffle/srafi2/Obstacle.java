@@ -11,12 +11,12 @@ public class Obstacle {
 		x = (float) (Math.random()*screenWidth);
 		y = Gdx.graphics.getHeight()*1.2f;
 		type = (int)(Math.random()*6) - 2;
-		xdir = (int)(Math.random()) - 1;
+		xdir = (int) Math.round(Math.random());
 		if (xdir == 0) xdir = -1;
 	}
 
-	public void move(float speed, float ballX) {
-		y -= speed;
+	public void move(float speed, float ballX, boolean ymv) {
+		if (ymv) y -= speed;
 
 		if (type == 1) {
 			x += speed*xdir*3/4f;

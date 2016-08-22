@@ -19,7 +19,7 @@ public class AndroidLauncher extends AndroidApplication implements GameOver {
 				initialize(new Classic(this), config);
 				break;
 			case 1:
-				initialize(new Sight(), config);
+				initialize(new Sight(this), config);
 				break;
 			case 2:
 				initialize(new Snowball(), config);
@@ -44,5 +44,10 @@ public class AndroidLauncher extends AndroidApplication implements GameOver {
 		intent.putExtra("mode", mode);
 		intent.putExtra("score", score);
 		startActivity(intent);
+	}
+
+	@Override
+	public  void onBackPressed() {
+
 	}
 }

@@ -97,4 +97,9 @@ public class GameOverActivity extends Activity {
 		startActivity(intent);
 		overridePendingTransition(R.anim.right_in, R.anim.right_out);
 	}
+
+	@Override
+	public void onBackPressed() {
+		back(new View(this));
+	}
 }
