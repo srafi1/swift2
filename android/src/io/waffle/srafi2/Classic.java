@@ -211,6 +211,9 @@ public class Classic extends ApplicationAdapter implements InputProcessor {
 		batch.dispose();
 		ballRenderer.dispose();
 		red_atlas.dispose();
+		pink_atlas.dispose();
+		green_atlas.dispose();
+		purple_atlas.dispose();
 		font.dispose();
 		pause.dispose();
 		play.dispose();

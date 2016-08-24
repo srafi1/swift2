@@ -22,7 +22,7 @@ public class AndroidLauncher extends AndroidApplication implements GameOver {
 				initialize(new Sight(this), config);
 				break;
 			case 2:
-				initialize(new Snowball(), config);
+				initialize(new Snowball(this), config);
 				break;
 			case 3:
 				initialize(new Uphill(), config);
