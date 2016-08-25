@@ -16,17 +16,17 @@ import java.util.ArrayList;
 public class Snowball extends ApplicationAdapter implements InputProcessor {
 	SpriteBatch batch;
 	float ballX, ballY, ballRadius, base, touchX, touchY, speed, realSpeed, screenWidth, screenHeight;
-	private Color ballColor;
-	private ShapeRenderer ballRenderer;
-	public float totalTime = 0, nextRockSpawn;
-	public int inputType, score;
-	public ArrayList<Rock> rocks;
-	private BitmapFont font;
-	private boolean paused;
-	private Texture pause, play, greyRock, blackRock;
-	public GameOver end;
+	Color ballColor;
+	ShapeRenderer ballRenderer;
+	float totalTime = 0, nextRockSpawn;
+	int inputType, score;
+	ArrayList<Rock> rocks;
+	BitmapFont font;
+	boolean paused;
+	Texture pause, play, greyRock, blackRock;
+	GameOver end;
 
-	public Snowball(GameOver go) {
+	Snowball(GameOver go) {
 		this.end = go;
 	}
 
@@ -116,7 +116,7 @@ public class Snowball extends ApplicationAdapter implements InputProcessor {
 		batch.end();
 	}
 
-	public void update() {
+	void update() {
 		updateRealSpeed();
 		if (totalTime >= nextRockSpawn) spawnRock();
 		moveBall();
@@ -134,7 +134,8 @@ public class Snowball extends ApplicationAdapter implements InputProcessor {
 			}
 			rocks.get(0).hit = true;
 		}
-		if (firstRock.y < 0 - base) {
+
+		if (firstRock.y <= 0 - base) {
 			rocks.remove(0);
 			score++;
 		}
@@ -144,13 +145,13 @@ public class Snowball extends ApplicationAdapter implements InputProcessor {
 		ballRadius *= mult;
 	}
 
-	private void spawnRock() {
+	void spawnRock() {
 		rocks.add(new Rock());
 		if (score < 500) nextRockSpawn = totalTime +  0.7f - score/1000f;
 		else nextRockSpawn = totalTime + 0.3f;
 	}
 
-	public void moveBall() {
+	void moveBall() {
 		if (inputType == 0 && touchX > 0) {
 			if (ballX > touchX + 5) ballX -= realSpeed;
 			else if (ballX < touchX - 5) ballX += realSpeed;
@@ -162,12 +163,12 @@ public class Snowball extends ApplicationAdapter implements InputProcessor {
 			ballX -= spd;
 		}
 
-		if (ballX <= 0) ballX = 0;
-		else if (ballX >= Gdx.graphics.getWidth()) ballX = Gdx.graphics.getWidth();
+		if (ballX <= ballRadius) ballX = ballRadius;
+		else if (ballX >= Gdx.graphics.getWidth() - ballRadius) ballX = Gdx.graphics.getWidth() - ballRadius;
 		if (Float.isNaN(ballX)) ballX = base*6;
 	}
 
-	public void updateRealSpeed() {
+	void updateRealSpeed() {
 		realSpeed = speed/Gdx.graphics.getFramesPerSecond();
 		if (realSpeed > speed) realSpeed = speed/60;
 	}
@@ -181,7 +182,7 @@ public class Snowball extends ApplicationAdapter implements InputProcessor {
 		play.dispose();
 	}
 
-	public double dist(float x1, float y1, float x2, float y2) {
+	double dist(float x1, float y1, float x2, float y2) {
 		return Math.sqrt((x2 - x1)*(x2 - x1) + (y2 - y1)*(y2 - y1));
 	}
 
@@ -203,8 +204,7 @@ public class Snowball extends ApplicationAdapter implements InputProcessor {
 		touchY = screenY;
 
 		if (screenX > screenWidth - 150 && screenY < 150) {
-			if (paused) paused = false;
-			else paused = true;
+			paused = !paused;
 		}
 
 		return inputType == 0;

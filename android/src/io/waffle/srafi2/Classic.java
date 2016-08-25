@@ -201,8 +201,8 @@ public class Classic extends ApplicationAdapter implements InputProcessor {
 			ballX -= spd;
 		}
 
-		if (ballX <= 0) ballX = 0;
-		else if (ballX >= Gdx.graphics.getWidth()) ballX = Gdx.graphics.getWidth();
+		if (ballX <= ballRadius) ballX = ballRadius;
+		else if (ballX >= Gdx.graphics.getWidth() - ballRadius) ballX = Gdx.graphics.getWidth() - ballRadius;
 		if (Float.isNaN(ballX)) ballX = base*6;
 	}
 
