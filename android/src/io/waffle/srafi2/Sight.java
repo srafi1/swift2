@@ -12,13 +12,6 @@ public class Sight extends Classic {
 		super.create();
 		down = false;
 		spawn();
-//		for (int i = 0; i < 6; i++) {
-//			obstacles.add(new Obstacle());
-//			obstacles.get(i).y -= screenHeight;
-//			obstacles.get(i).y += screenHeight/3*i;
-//			if (obstacles.get(i).type == 3) obstacles.get(i).type = 0;
-//		}
-//		while (Math.abs(obstacles.get(0).x - ballX) < ballRadius) obstacles.get(0).x = (float) (Math.random()*screenWidth);
 	}
 
 	@Override

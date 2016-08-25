@@ -8,7 +8,7 @@ public class Obstacle {
 
 	public Obstacle () {
 		screenWidth = Gdx.graphics.getWidth();
-		x = (float) (Math.random()*screenWidth);
+		x = (float) (Math.random()*screenWidth*10/12f) + screenWidth/12;
 		y = Gdx.graphics.getHeight()*1.2f;
 		type = (int)(Math.random()*6) - 2;
 		xdir = (int) Math.round(Math.random());

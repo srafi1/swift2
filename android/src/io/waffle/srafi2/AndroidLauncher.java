@@ -31,7 +31,7 @@ public class AndroidLauncher extends AndroidApplication implements GameOver {
 				initialize(new Feed(), config);
 				break;
 			case 5:
-				initialize(new Scroll(), config);
+				initialize(new Scroll(this), config);
 				break;
 			case 6:
 				initialize(new Jump(), config);

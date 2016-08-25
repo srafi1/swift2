@@ -147,7 +147,7 @@ public class Snowball extends ApplicationAdapter implements InputProcessor {
 
 	void spawnRock() {
 		rocks.add(new Rock());
-		if (score < 500) nextRockSpawn = totalTime +  0.7f - score/1000f;
+		if (score < 400) nextRockSpawn = totalTime +  0.7f - score/1000f;
 		else nextRockSpawn = totalTime + 0.3f;
 	}
 

@@ -185,7 +185,7 @@ public class Classic extends ApplicationAdapter implements InputProcessor {
 
 	public void spawn() {
 		obstacles.add(new Obstacle());
-		if (score < 500) nextSpawn = totalTime +  0.7f - score/1000f;
+		if (score < 400) nextSpawn = totalTime +  0.7f - score/1000f;
 		else nextSpawn = totalTime + 0.3f;
 	}
 
@@ -225,8 +225,8 @@ public class Classic extends ApplicationAdapter implements InputProcessor {
 		touchY = screenY;
 
 		if (screenX > screenWidth - 150 && screenY < 150) {
-			if (paused) paused = false;
-			else paused = true;
+			paused = !paused;
+			nextSpawn = totalTime + 1 - score/1000f;
 		}
 
 		return inputType == 0;

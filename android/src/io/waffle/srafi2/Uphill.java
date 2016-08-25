@@ -57,6 +57,7 @@ public class Uphill extends Snowball {
 			if (firstRock.type == 2 && dist(firstRock.x, firstRock.y, ballX, ballY) <= ballRadius + base / 2) {
 				if (ballRadius > base) grow += ballRadius * 0.1;
 				else grow += base *0.1;
+				score++;
 				rocks.get(0).hit = true;
 			}
 			else if (firstRock.type < 2 && dist(firstRock.x, firstRock.y, ballX, ballY) <= ballRadius + base) {

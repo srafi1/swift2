@@ -24,7 +24,7 @@ public class Settings extends Activity {
 		SharedPreferences settings = getSharedPreferences("settings", Context.MODE_PRIVATE);
 
 		Button control;
-		int ctrl = settings.getInt("controls", 0);
+		int ctrl = settings.getInt("controls", 1);
 		if (ctrl == 0) control = (Button) findViewById(R.id.touch);
 		else control = (Button) findViewById(R.id.tilt);
 		control.setTextColor(Color.BLACK);
