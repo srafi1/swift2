@@ -1,0 +1,240 @@
+
+pacman.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+pac0000
+  rotate: false
+  xy: 1, 485
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+pac0001
+  rotate: false
+  xy: 485, 485
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+
+pacman2.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+pac0002
+  rotate: false
+  xy: 485, 1
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+  
+pacman.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+pac0003
+  rotate: false
+  xy: 485, 1
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+pac0004
+  rotate: false
+  xy: 1, 1
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+  
+pacman3.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+pac0005
+  rotate: false
+  xy: 1, 485
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+pac0006
+  rotate: false
+  xy: 485, 485
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+
+pacman2.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+pac0007
+  rotate: false
+  xy: 485, 485
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+pac0008
+  rotate: false
+  xy: 1, 1
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+pac0009
+  rotate: false
+  xy: 1, 485
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+
+pacman4.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+pac0010
+  rotate: false
+  xy: 1, 1
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+pac0011
+  rotate: false
+  xy: 485, 1
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+
+pacman3.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+pac0012
+  rotate: false
+  xy: 1, 1
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+
+pacman4.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+pac0013
+  rotate: false
+  xy: 485, 1
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+pac0014
+  rotate: false
+  xy: 1, 1
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+
+pacman2.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+pac0015
+  rotate: false
+  xy: 1, 485
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+pac0016
+  rotate: false
+  xy: 1, 1
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+pac0017
+  rotate: false
+  xy: 485, 485
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+
+pacman3.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+pac0018
+  rotate: false
+  xy: 485, 485
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+pac0019
+  rotate: false
+  xy: 485, 1
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+  
+pacman.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+pac0020
+  rotate: false
+  xy: 1, 1
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+pac0021
+  rotate: false
+  xy: 485, 1
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+
+pacman2.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+pac0022
+  rotate: false
+  xy: 485, 1
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+  
+pacman.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+pac0023
+  rotate: false
+  xy: 485, 485
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1
+pac0024
+  rotate: false
+  xy: 1, 485
+  size: 482, 482
+  orig: 482, 482
+  offset: 0, 0
+  index: -1

@@ -16,7 +16,7 @@ public class Scroll extends Classic {
 
 		for (int i = 0; i < 3; i++) {
 			obstacles.add(new Obstacle());
-			obstacles.get(i).y += screenHeight/3*(i - 1);
+			obstacles.get(i).y += (screenHeight + screenWidth/6)/3*(i - 1);
 		}
 
 		dir = 1;

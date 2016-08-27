@@ -16,21 +16,21 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import java.util.ArrayList;
 
 public class Classic extends ApplicationAdapter implements InputProcessor {
-	private SpriteBatch batch;
-	public float ballX, ballY, ballRadius, base, touchX, touchY, speed, realSpeed, screenWidth, screenHeight;
-	private Color ballColor;
+	SpriteBatch batch;
+	float ballX, ballY, ballRadius, base, touchX, touchY, speed, realSpeed, screenWidth, screenHeight;
+	Color ballColor;
 	private ShapeRenderer ballRenderer;
-	public float totalTime = 0, nextSpawn;
+	float totalTime = 0, nextSpawn;
 	private TextureAtlas red_atlas, pink_atlas, pink_atlas_flip, green_atlas, purple_atlas;
 	private Animation red_anim, pink_anim, pink_anim_flip, green_anim, purple_anim;
-	public int inputType, score;
-	public ArrayList<Obstacle> obstacles;
-	private BitmapFont font;
-	private boolean paused;
-	private Texture pause, play;
-	public GameOver end;
+	int inputType, score;
+	ArrayList<Obstacle> obstacles;
+	BitmapFont font;
+	boolean paused;
+	Texture pause, play;
+	GameOver end;
 
-	public Classic(GameOver go) {
+	Classic(GameOver go) {
 		super();
 		this.end = go;
 	}
@@ -155,14 +155,15 @@ public class Classic extends ApplicationAdapter implements InputProcessor {
 
 		if (obstacles.size() == 0) return;
 
-		if (dist(obstacles.get(0).x, obstacles.get(0).y, ballX, ballY) < ballRadius*2) end.die(score);
-		if (obstacles.get(0).y < 0 - base) {
+		Obstacle firstOb = obstacles.get(0);
+		if (dist(firstOb.x, firstOb.y, ballX, ballY) < ballRadius*2) end.die(score);
+		if (firstOb.y < 0 - base) {
 			obstacles.remove(0);
 			score++;
 		}
 	}
 
-	public void updateRealSpeed() {
+	void updateRealSpeed() {
 		realSpeed = speed/Gdx.graphics.getFramesPerSecond();
 		if (realSpeed > speed) realSpeed = speed/60;
 	}
@@ -179,11 +180,11 @@ public class Classic extends ApplicationAdapter implements InputProcessor {
 		paused = true;
 	}
 
-	public double dist(float x1, float y1, float x2, float y2) {
+	double dist(float x1, float y1, float x2, float y2) {
 		return Math.sqrt((x2 - x1)*(x2 - x1) + (y2 - y1)*(y2 - y1));
 	}
 
-	public void spawn() {
+	void spawn() {
 		obstacles.add(new Obstacle());
 		if (score < 400) nextSpawn = totalTime +  0.7f - score/1000f;
 		else nextSpawn = totalTime + 0.3f;
