@@ -26,6 +26,7 @@ public class Scroll extends Classic {
 	@Override
 	public void update() {
 		updateRealSpeed();
+		if (realSpeed == 0) return;
 		moveBall();
 
 		for (int i = 0; i < obstacles.size(); i++) {
@@ -52,7 +53,8 @@ public class Scroll extends Classic {
 			ydiff = touchY - initialTouchY;
 			initialTouchY += ydiff;
 		} else if (inputType == 1 && Gdx.input.getAccelerometerZ() > 0) {
-			ydiff = realSpeed*Gdx.input.getAccelerometerZ()/10;
+			ydiff = realSpeed*Gdx.input.getAccelerometerZ()/3;
+			if (ydiff > realSpeed) ydiff = realSpeed;
 		} else ydiff = 0;
 	}
 

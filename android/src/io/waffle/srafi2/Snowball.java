@@ -118,6 +118,7 @@ public class Snowball extends ApplicationAdapter implements InputProcessor {
 
 	void update() {
 		updateRealSpeed();
+		if (realSpeed == 0) return;
 		if (totalTime >= nextRockSpawn) spawnRock();
 		moveBall();
 
@@ -170,7 +171,7 @@ public class Snowball extends ApplicationAdapter implements InputProcessor {
 
 	void updateRealSpeed() {
 		realSpeed = speed/Gdx.graphics.getFramesPerSecond();
-		if (realSpeed > speed) realSpeed = speed/60;
+		if (realSpeed > speed/30f) realSpeed = 0;
 	}
 
 	@Override

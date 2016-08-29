@@ -2,6 +2,7 @@ package io.waffle.srafi2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.WindowManager;
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 
@@ -10,6 +11,7 @@ public class AndroidLauncher extends AndroidApplication implements GameOver {
 	@Override
 	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
 
 		mode = getIntent().getIntExtra("gamemode", 0);
@@ -34,7 +36,7 @@ public class AndroidLauncher extends AndroidApplication implements GameOver {
 				initialize(new Scroll(this), config);
 				break;
 			case 6:
-				initialize(new Jump(), config);
+				initialize(new Jump(this), config);
 				break;
 		}
 	}

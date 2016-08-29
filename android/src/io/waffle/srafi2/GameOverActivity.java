@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import com.appszoom.appszoomsdk.Appszoom;
 
 public class GameOverActivity extends Activity {
 	private int mode;
@@ -36,7 +37,7 @@ public class GameOverActivity extends Activity {
 				modeName = "Uphill";
 				break;
 			case 4:
-				modeName = "Feed";
+				modeName = "Pacman";
 				break;
 			case 5:
 				modeName = "Scroll";
@@ -83,6 +84,17 @@ public class GameOverActivity extends Activity {
 				title.setTextColor(Color.parseColor("#800080"));
 				break;
 		}
+
+		Appszoom.start(this);
+		int gameNum = highscores.getInt("gamenum", 0);
+		gameNum++;
+		if (gameNum > 4) {
+			Appszoom.showAd(this);
+			gameNum = 0;
+		}
+		SharedPreferences.Editor edit = highscores.edit();
+		edit.putInt("gamenum", gameNum);
+		edit.commit();
 	}
 
 	public void playAgain(View view) {

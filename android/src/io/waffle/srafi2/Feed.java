@@ -24,7 +24,7 @@ class Feed extends Classic {
 		cookie = new Texture(Gdx.files.internal("cookie.png"));
 		cake = new Texture(Gdx.files.internal("cake.png"));
 		icecream = new Texture(Gdx.files.internal("icecream.png"));
-		bomb = new Texture(Gdx.files.internal("badlogic.jpg"));
+		bomb = new Texture(Gdx.files.internal("bomb.png"));
 
 		pacman_atlas = new TextureAtlas(Gdx.files.internal("pacman.atlas"));
 		pacman = new Animation(1/24f, pacman_atlas.getRegions());
@@ -64,7 +64,7 @@ class Feed extends Classic {
 					if (!obstacles.get(i).eaten) batch.draw(cake, obstacles.get(i).x - base, obstacles.get(i).y - base, base*2, base*2);
 					break;
 				case 3:
-					if (!obstacles.get(i).eaten) batch.draw(bomb, obstacles.get(i).x - base, obstacles.get(i).y - base, base*2, base*2);
+					if (!obstacles.get(i).eaten) batch.draw(bomb, obstacles.get(i).x - base, obstacles.get(i).y - base, base*2, base*3);
 					break;
 			}
 		}
@@ -96,6 +96,7 @@ class Feed extends Classic {
 	@Override
 	public void update() {
 		updateRealSpeed();
+		if (realSpeed == 0) return;
 		if (totalTime >= nextSpawn) spawn();
 		moveBall();
 

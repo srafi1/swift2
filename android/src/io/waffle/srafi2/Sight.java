@@ -17,6 +17,7 @@ public class Sight extends Classic {
 	@Override
 	public void update() {
 		updateRealSpeed();
+		if (realSpeed == 0) return;
 		moveBall();
 
 		if (ballY > screenHeight - ballRadius) down = true;
@@ -48,7 +49,6 @@ public class Sight extends Classic {
 		for (int i = 0; i < 3; i++) obstacles.add(new Obstacle());
 		for (int i = 0; i < 3; i++) {
 			obstacles.get(obstacles.size() - 3 + i).y += screenHeight / 3 * i;
-//			if (obstacles.get(obstacles.size() - 3 + i).type == 3) obstacles.get(obstacles.size() - 3 + i).type = 0;
 		}
 	}
 }

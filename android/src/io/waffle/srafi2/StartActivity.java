@@ -8,17 +8,14 @@ import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
 public class StartActivity extends Activity {
 	private VideoView myVideoView;
-	private MediaController mediaControls;
-	int backButtonCount;
+	private int backButtonCount;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +24,6 @@ public class StartActivity extends Activity {
 
 		backButtonCount = 0;
 
-		mediaControls = new MediaController(StartActivity.this);
 		myVideoView = (VideoView) findViewById(R.id.bg);
 
 		try {
@@ -99,7 +95,9 @@ public class StartActivity extends Activity {
 	}
 
 	public void rate(View view) {
-		Log.d("rate", "Go to Google Play Page");
+		Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=io.waffle.srafi2");
+		Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+		startActivity(intent);
 	}
 
 	@Override

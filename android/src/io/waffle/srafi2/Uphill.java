@@ -33,7 +33,7 @@ public class Uphill extends Snowball {
 		batch.begin();
 		for (int i = 0; i < rocks.size(); i++) {
 			Rock rock = rocks.get(i);
-			if (rock.type < 2) batch.draw(greyRock, rock.x - base, rock.y - base, base*2, base*2);
+			if (rock.type < 2) batch.draw(blackRock, rock.x - base, rock.y - base, base*2, base*2);
 		}
 
 		font.draw(batch, "" + score, 20, screenHeight - 20);
@@ -45,6 +45,7 @@ public class Uphill extends Snowball {
 	@Override
 	public void update() {
 		updateRealSpeed();
+		if (realSpeed == 0) return;
 		if (totalTime >= nextRockSpawn) spawnRock();
 		moveBall();
 
@@ -59,8 +60,7 @@ public class Uphill extends Snowball {
 				else grow += base *0.1;
 				score++;
 				rocks.get(0).hit = true;
-			}
-			else if (firstRock.type < 2 && dist(firstRock.x, firstRock.y, ballX, ballY) <= ballRadius + base) {
+			} else if (firstRock.type < 2 && dist(firstRock.x, firstRock.y, ballX, ballY) <= ballRadius + base) {
 				end.die(score);
 				rocks.get(0).hit = true;
 			}
@@ -79,5 +79,7 @@ public class Uphill extends Snowball {
 			if (mult < 0.95) mult = 1;
 			ballRadius *= mult;
 		}
+
+		if (ballRadius <= 1) end.die(score);
 	}
 }

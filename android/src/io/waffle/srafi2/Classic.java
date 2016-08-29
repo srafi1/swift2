@@ -148,6 +148,7 @@ public class Classic extends ApplicationAdapter implements InputProcessor {
 
 	public void update() {
 		updateRealSpeed();
+		if (realSpeed == 0) return;
 		if (totalTime >= nextSpawn) spawn();
 		moveBall();
 
@@ -165,7 +166,7 @@ public class Classic extends ApplicationAdapter implements InputProcessor {
 
 	void updateRealSpeed() {
 		realSpeed = speed/Gdx.graphics.getFramesPerSecond();
-		if (realSpeed > speed) realSpeed = speed/60;
+		if (realSpeed > speed/30f) realSpeed = 0;
 	}
 
 	@Override

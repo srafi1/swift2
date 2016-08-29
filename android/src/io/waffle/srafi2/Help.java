@@ -7,14 +7,14 @@ import android.view.View;
 import android.widget.TextView;
 
 public class Help extends Activity {
-	String sightTitle, sightText;
-	String snowballTitle, snowballText;
-	String uphillTitle, uphillText;
-	String feedTitle, feedText;
-	String scrollTitle, scrollText;
-	String jumpTitle, jumpText;
-	String errorTitle, errorText;
-	int mode;
+	private String sightTitle, sightText;
+	private String snowballTitle, snowballText;
+	private String uphillTitle, uphillText;
+	private String feedTitle, feedText;
+	private String scrollTitle, scrollText;
+	private String jumpTitle, jumpText;
+	private String errorTitle, errorText;
+	private int mode;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,15 +22,15 @@ public class Help extends Activity {
 		setContentView(R.layout.help);
 
 		sightTitle = "Sight";
-		sightText = "The ball moves up the screen instead of the camera view. The view only advances when you get to the top.";
+		sightText = "The ball moves up the screen instead of the obstacles coming down.";
 		snowballTitle = "Snowball";
 		snowballText = "The ball gets larger over time. Crash into gray rocks to decrease size. Crashing into a black rock is game over.";
 		uphillTitle = "Uphill";
-		uphillText = "The ball gets smaller over time. Collect small circles to grow. Crashing into a rock is game over";
-		feedTitle = "Feed";
-		feedText = "The ball changes to the opposite color over time (reaching it is game over). Eat obstacles to retain color";
+		uphillText = "The ball gets smaller over time. Collect small circles to grow. Crashing into a rock is game over. Getting too small is game over.";
+		feedTitle = "Pacman";
+		feedText = "Eat all of the food. Lose energy as you miss food.";
 		scrollTitle = "Scroll";
-		scrollText = "The ball moves left and right automatically. Scroll obstacles up and down to dodge obstacles.";
+		scrollText = "The ball moves left and right automatically. Scroll obstacles down to dodge obstacles or tilt forward.";
 		jumpTitle = "Jump";
 		jumpText = "The ball falls with gravity. Tap to jump back up.";
 		errorTitle = "Error";
