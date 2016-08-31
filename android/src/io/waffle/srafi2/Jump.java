@@ -31,6 +31,7 @@ public class Jump extends Classic {
 
 		if (ballY < 0) end.die(score);
 
+		for (int i = 0; i < obstacles.size(); i++) if (dist(obstacles.get(i).x, obstacles.get(i).y, ballX, ballY) < ballRadius*2) end.die(score);
 		Obstacle firstOb = obstacles.get(0);
 		if (dist(firstOb.x, firstOb.y, ballX, ballY) < ballRadius*2) end.die(score);
 		if (firstOb.y < 0 - base) {
@@ -45,7 +46,7 @@ public class Jump extends Classic {
 	public void moveBall() {
 		super.moveBall();
 
-		if (ballY - grav*realSpeed > screenHeight/4) for (int i = 0; i < obstacles.size(); i++) obstacles.get(i).y += grav*realSpeed;
+		if (ballY - grav*realSpeed > screenHeight/3) for (int i = 0; i < obstacles.size(); i++) obstacles.get(i).y += grav*realSpeed;
 		else ballY -= grav*realSpeed;
 	}
 

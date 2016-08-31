@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.WindowManager;
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
+import com.flurry.android.FlurryAgent;
 
 public class AndroidLauncher extends AndroidApplication implements GameOver {
 	private int mode;
@@ -13,6 +14,8 @@ public class AndroidLauncher extends AndroidApplication implements GameOver {
 		super.onCreate(savedInstanceState);
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
+
+		new FlurryAgent.Builder().withLogEnabled(false).build(this, "D99YWXKNSRT6YCVMGWMG");
 
 		mode = getIntent().getIntExtra("gamemode", 0);
 

@@ -171,6 +171,10 @@ public class Snowball extends ApplicationAdapter implements InputProcessor {
 
 	void updateRealSpeed() {
 		realSpeed = speed/Gdx.graphics.getFramesPerSecond();
+		if (ballRadius > base) {
+			if (ballRadius < base*2) realSpeed *= ballRadius/base;
+			else realSpeed *= 2;
+		}
 		if (realSpeed > speed/30f) realSpeed = 0;
 	}
 

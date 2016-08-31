@@ -30,7 +30,7 @@ public class Help extends Activity {
 		feedTitle = "Pacman";
 		feedText = "Eat all of the food. Lose energy as you miss food.";
 		scrollTitle = "Scroll";
-		scrollText = "The ball moves left and right automatically. Scroll obstacles down to dodge obstacles or tilt forward.";
+		scrollText = "The ball moves left and right automatically. Scroll obstacles down to dodge obstacles or tilt device forward.";
 		jumpTitle = "Jump";
 		jumpText = "The ball falls with gravity. Tap to jump back up.";
 		errorTitle = "Error";
