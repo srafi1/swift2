@@ -1,5 +1,5 @@
 android {
-    buildToolsVersion "24.0.1"
+    buildToolsVersion '26.0.2'
     compileSdkVersion 24
     sourceSets {
         main {
@@ -11,13 +11,11 @@ android {
             assets.srcDirs = ['assets']
             jniLibs.srcDirs = ['libs']
         }
-
-        instrumentTest.setRoot('tests')
     }
     defaultConfig {
         applicationId "io.waffle.srafi2"
         minSdkVersion 14
-        targetSdkVersion 24
+        targetSdkVersion 26
     }
 }
 

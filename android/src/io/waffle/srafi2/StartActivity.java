@@ -27,7 +27,8 @@ public class StartActivity extends Activity {
 		myVideoView = (VideoView) findViewById(R.id.bg);
 
 		try {
-			myVideoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.bg_animnew));
+			String path = "android.resource://" + getPackageName() + "/" + R.raw.bg_anim;
+			myVideoView.setVideoURI(Uri.parse(path));
 
 		} catch (Exception e) {
 			e.printStackTrace();
