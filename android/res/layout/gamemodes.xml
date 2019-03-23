@@ -87,7 +87,7 @@
 			</TableRow>
 			<TableRow android:padding="5dp">
 				<Button
-					android:text="Pacman"
+					android:text="Feed"
 					android:textColor="#FFFFFF"
 					android:textSize="36sp"
 					android:layout_width="0dp"

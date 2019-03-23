@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	
-	<string name="app_name">Swift 2</string>
-	<string name="az_appkey">0bef90118ef86431de37b18bb4851b16</string>
+	<string name="app_name">Swift Run</string>
 
 </resources>

@@ -3,14 +3,11 @@ package io.waffle.srafi2;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Animation;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 class Feed extends Classic {
 	private int energy;
 	private Texture cookie, cake, icecream, bomb, batt_5, batt_4, batt_3, batt_2, batt_1;
-	private TextureAtlas pacman_atlas;
-	private Animation pacman;
 
 	Feed(GameOver go) {
 		super(go);
@@ -26,9 +23,6 @@ class Feed extends Classic {
 		icecream = new Texture(Gdx.files.internal("icecream.png"));
 		bomb = new Texture(Gdx.files.internal("bomb.png"));
 
-		pacman_atlas = new TextureAtlas(Gdx.files.internal("pacman.atlas"));
-		pacman = new Animation(1/24f, pacman_atlas.getRegions());
-
 		batt_1 = new Texture(Gdx.files.internal("batt_1.png"));
 		batt_2 = new Texture(Gdx.files.internal("batt_2.png"));
 		batt_3 = new Texture(Gdx.files.internal("batt_3.png"));
@@ -41,11 +35,15 @@ class Feed extends Classic {
 		if (!paused) update();
 
 		Gdx.gl.glClearColor(0, 0, 0, 1);
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);batch.begin();
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		totalTime += Gdx.graphics.getDeltaTime();
 
-		batch.draw(pacman.getKeyFrame(totalTime, true), ballX - base, ballY - base, ballRadius*2, ballRadius*2l);
+		ballRenderer.begin(ShapeRenderer.ShapeType.Filled);
+		ballRenderer.setColor(ballColor);
+		ballRenderer.circle(ballX, ballY, ballRadius);
+		ballRenderer.end();
 
+		batch.begin();
 		for (int i = 0; i < obstacles.size(); i++) {
 			switch (obstacles.get(i).type) {
 				case -2:

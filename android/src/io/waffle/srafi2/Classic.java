@@ -19,7 +19,7 @@ public class Classic extends ApplicationAdapter implements InputProcessor {
 	SpriteBatch batch;
 	float ballX, ballY, ballRadius, base, touchX, touchY, speed, realSpeed, screenWidth, screenHeight;
 	Color ballColor;
-	private ShapeRenderer ballRenderer;
+	ShapeRenderer ballRenderer;
 	float totalTime = 0, nextSpawn;
 	private TextureAtlas red_atlas, pink_atlas, pink_atlas_flip, green_atlas, purple_atlas;
 	private Animation red_anim, pink_anim, pink_anim_flip, green_anim, purple_anim;
